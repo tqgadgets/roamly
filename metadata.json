@@ -1,0 +1,6 @@
+{
+  "name": "Roamly",
+  "description": "Design system tokens, typography, base UI components, and theme style preview.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
