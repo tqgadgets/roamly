@@ -13,10 +13,20 @@
   --font-body: "Open Sans", system-ui, -apple-system, sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: #030712;
+    --color-foreground: #ffffff;
+    --color-body: #d1d5db;
+    --color-card: #111827;
+    --color-border: #1f2937;
+  }
+}
+
 @layer base {
   body {
-    background-color: var(--color-background);
-    color: var(--color-body);
+    @apply bg-[var(--color-background)] dark:bg-gray-950 text-[var(--color-body)] dark:text-gray-300;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -26,8 +36,8 @@
   h2,
   h3,
   h4 {
+    @apply text-[var(--color-foreground)] dark:text-white;
     font-family: var(--font-heading);
-    color: var(--color-foreground);
     letter-spacing: -0.025em;
   }
 

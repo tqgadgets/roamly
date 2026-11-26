@@ -54,7 +54,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf9f6]/80 backdrop-blur-md border-b border-[var(--color-border)]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf9f6]/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-[var(--color-border)] dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
           {/* Left: Logo */}
           <a
@@ -63,16 +63,23 @@ export function Header() {
             aria-label="Roamly home"
             className="inline-flex items-center whitespace-nowrap shrink-0"
           >
+            <span className="dark:hidden">
+              <img
+                src="/logo.png"
+                alt="Roamly"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            </span>
             <img
-              src="/logo.png"
+              src="/logo-footer.png"
               alt="Roamly"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="hidden dark:block h-10 md:h-12 w-auto object-contain"
             />
           </a>
 
           {/* Center (Desktop): Nav Links Pill */}
           <nav aria-label="Primary navigation" className="hidden md:flex">
-            <div className="flex items-center gap-1 rounded-full bg-[#e5c7a4]/40 px-2 py-1.5">
+            <div className="flex items-center gap-1 rounded-full bg-[#e5c7a4]/40 dark:bg-gray-900/90 dark:border dark:border-gray-800 px-2 py-1.5">
               {navLinks.map((link) => {
                 const active = isLinkActive(link.href);
                 return (
@@ -82,8 +89,8 @@ export function Header() {
                     aria-current={active ? 'page' : undefined}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
                       active
-                        ? 'bg-white text-[var(--color-foreground)] font-semibold shadow-sm'
-                        : 'text-[var(--color-foreground)] hover:bg-white hover:font-semibold'
+                        ? 'bg-white dark:bg-gray-800 text-[var(--color-foreground)] dark:text-white font-semibold shadow-sm'
+                        : 'text-[var(--color-foreground)] dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 dark:hover:text-white hover:font-semibold'
                     }`}
                   >
                     {link.label}
@@ -112,7 +119,7 @@ export function Header() {
                   : 'Open navigation menu'
               }
               aria-expanded={isMobileMenuOpen}
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--color-border)] text-[var(--color-foreground)] hover:bg-gray-50 transition-colors cursor-pointer"
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--color-border)] dark:border-gray-800 text-[var(--color-foreground)] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:text-white transition-colors cursor-pointer"
             >
               {isMobileMenuOpen ? (
                 <X className="w-5 h-5" />
@@ -126,7 +133,7 @@ export function Header() {
 
       {/* Mobile Full-Screen Navigation Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-x-0 top-16 bottom-0 z-40 md:hidden overflow-y-auto bg-[var(--color-card)]/95 backdrop-blur-md border-t border-[var(--color-border)] p-6 flex flex-col justify-between">
+        <div className="fixed inset-x-0 top-16 bottom-0 z-40 md:hidden overflow-y-auto bg-[var(--color-card)]/95 dark:bg-gray-950/95 backdrop-blur-md border-t border-[var(--color-border)] dark:border-gray-800 p-6 flex flex-col justify-between">
           <nav
             aria-label="Mobile navigation"
             className="flex flex-col space-y-2"
@@ -136,13 +143,13 @@ export function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-base font-medium text-[var(--color-foreground)] hover:bg-orange-50 hover:text-[var(--color-accent)] transition-colors"
+                className="px-4 py-3 rounded-xl text-base font-medium text-[var(--color-foreground)] dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-900 hover:text-[var(--color-accent)] dark:hover:text-white transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
-          <div className="pt-4 border-t border-[var(--color-border)]">
+          <div className="pt-4 border-t border-[var(--color-border)] dark:border-gray-800">
             <a
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}

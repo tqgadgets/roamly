@@ -53,7 +53,7 @@ export function ImageSlider({
             type="button"
             onClick={handlePrevious}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[var(--color-foreground)] shadow-md flex items-center justify-center transition-all duration-200 active:scale-95 motion-reduce:active:scale-100 cursor-pointer"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white dark:bg-black/50 dark:hover:bg-black/70 backdrop-blur-sm text-black dark:text-white shadow-md flex items-center justify-center transition-all duration-200 active:scale-95 motion-reduce:active:scale-100 cursor-pointer"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -62,7 +62,7 @@ export function ImageSlider({
             type="button"
             onClick={handleNext}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[var(--color-foreground)] shadow-md flex items-center justify-center transition-all duration-200 active:scale-95 motion-reduce:active:scale-100 cursor-pointer"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white dark:bg-black/50 dark:hover:bg-black/70 backdrop-blur-sm text-black dark:text-white shadow-md flex items-center justify-center transition-all duration-200 active:scale-95 motion-reduce:active:scale-100 cursor-pointer"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

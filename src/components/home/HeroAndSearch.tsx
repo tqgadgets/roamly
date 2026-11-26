@@ -289,9 +289,9 @@ export function HeroAndSearch() {
         className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 -mt-10 sm:-mt-20"
       >
         <Reveal immediate delay={0.25}>
-          <Card className="p-5 sm:p-6 shadow-lg hover:shadow-lg bg-white">
+          <Card className="p-5 sm:p-6 shadow-lg hover:shadow-lg bg-white dark:bg-gray-900 dark:border-gray-800">
             <h2
-              className="text-xl md:text-2xl font-bold text-[var(--color-foreground)] mb-4"
+              className="text-xl md:text-2xl font-bold text-[var(--color-foreground)] dark:text-white mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Quick Enquiry
@@ -300,10 +300,10 @@ export function HeroAndSearch() {
             {isSubmitted ? (
               <div
                 role="status"
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 text-[var(--color-foreground)]"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50/70 dark:bg-emerald-950/50 p-4 text-[var(--color-foreground)] dark:text-emerald-100"
               >
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <p className="text-sm sm:text-base font-medium">
                     Thank you! We will contact you shortly.
                   </p>
@@ -312,7 +312,7 @@ export function HeroAndSearch() {
                   type="button"
                   variant="secondary"
                   onClick={() => setIsSubmitted(false)}
-                  className="text-sm whitespace-nowrap self-start sm:self-auto"
+                  className="text-sm whitespace-nowrap self-start sm:self-auto dark:border-gray-700 dark:text-white dark:hover:bg-gray-800"
                 >
                   Send Another
                 </Button>
@@ -335,7 +335,7 @@ export function HeroAndSearch() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Full Name"
-                      className="w-full bg-white border border-gray-200 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
+                      className="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
                     />
                   </div>
 
@@ -354,7 +354,7 @@ export function HeroAndSearch() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="Phone Number"
-                      className="w-full bg-white border border-gray-200 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] placeholder:text-gray-400 tabular-nums focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
+                      className="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 tabular-nums focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
                     />
                   </div>
 
@@ -389,7 +389,7 @@ export function HeroAndSearch() {
                           }
                         }}
                         placeholder="Where to? (e.g. Bali, Switzerland)"
-                        className="w-full bg-white border border-gray-200 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
+                        className="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
                       />
                     </div>
 
@@ -398,7 +398,7 @@ export function HeroAndSearch() {
                         id="destination-suggestions-listbox"
                         role="listbox"
                         aria-label="Destination suggestions"
-                        className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto"
+                        className="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg max-h-60 overflow-y-auto"
                       >
                         {filteredDestinations.length > 0 ? (
                           filteredDestinations.map((loc) => (
@@ -412,7 +412,7 @@ export function HeroAndSearch() {
                                 setDestinationQuery(loc);
                                 setIsDropdownOpen(false);
                               }}
-                              className="w-full text-left px-4 py-2 text-sm text-[var(--color-foreground)] hover:bg-gray-100 flex items-center gap-2.5 cursor-pointer transition-colors"
+                              className="w-full text-left px-4 py-2 text-sm text-[var(--color-foreground)] dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2.5 cursor-pointer transition-colors"
                             >
                               <MapPin
                                 aria-hidden="true"
@@ -422,7 +422,7 @@ export function HeroAndSearch() {
                             </button>
                           ))
                         ) : (
-                          <div className="px-4 py-2.5 text-sm text-gray-500">
+                          <div className="px-4 py-2.5 text-sm text-gray-500 dark:text-gray-400">
                             No destinations found
                           </div>
                         )}
@@ -444,7 +444,7 @@ export function HeroAndSearch() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Any specific requirements?"
-                      className="w-full bg-white border border-gray-200 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
+                      className="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-3 pl-10 text-sm text-[var(--color-foreground)] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export function HeroAndSearch() {
                 {errorMessage && (
                   <p
                     role="alert"
-                    className="mt-3 text-xs font-medium text-red-600"
+                    className="mt-3 text-xs font-medium text-red-600 dark:text-red-400"
                   >
                     {errorMessage}
                   </p>

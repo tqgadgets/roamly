@@ -217,8 +217,8 @@ export function PromoAndDestinations() {
                     onClick={() => setSelectedStayType(stay.id)}
                     className={`flex flex-col items-start gap-1.5 p-4 rounded-2xl border text-left transition-colors cursor-pointer ${
                       isActive
-                        ? 'bg-orange-50 border-[var(--color-accent)] text-[var(--color-foreground)]'
-                        : 'bg-[var(--color-card)] border-[var(--color-border)] text-[var(--color-foreground)] hover:bg-gray-50'
+                        ? 'bg-orange-50 dark:bg-gray-800 border-[var(--color-accent)] text-[var(--color-foreground)] dark:text-white'
+                        : 'bg-[var(--color-card)] border-[var(--color-border)] text-[var(--color-foreground)] hover:bg-gray-50 dark:hover:bg-gray-800'
                     }`}
                   >
                     <Icon className="w-5 h-5 text-[var(--color-accent)]" />

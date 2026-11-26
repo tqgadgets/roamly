@@ -33,9 +33,9 @@ export function PackageCard({ pkg }: PackageCardProps) {
   const [priceAmount, priceUnit] = pkg.price.split('/');
 
   return (
-    <article className="bg-white rounded-3xl shadow-lg border border-gray-100 flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300 motion-reduce:transform-none">
+    <article className="bg-white dark:bg-gray-900 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300 motion-reduce:transform-none">
       {/* Top Half: Image + Sweeping Wave + Glass Heart + Category Badge */}
-      <div className="relative w-full h-64 md:h-72 overflow-hidden rounded-t-3xl bg-stone-200">
+      <div className="relative w-full h-64 md:h-72 overflow-hidden rounded-t-3xl bg-stone-200 dark:bg-gray-800">
         <a href={`/packages/${pkg.id}`} className="block w-full h-full">
           <img
             src={pkg.image}
@@ -85,31 +85,33 @@ export function PackageCard({ pkg }: PackageCardProps) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
-            className="w-full h-full"
+            className="w-full h-full text-white dark:text-gray-900"
           >
             <path
               d="M0,32 C320,80 640,0 1440,48 L1440,74 L0,74 Z"
-              fill="#ffffff"
+              fill="currentColor"
             />
           </svg>
         </div>
       </div>
 
       {/* Bottom Half: Content + Curved Beige Footer */}
-      <div className="-mt-2 relative z-10 flex-1 flex flex-col overflow-hidden rounded-b-3xl bg-white">
+      <div className="-mt-2 relative z-10 flex-1 flex flex-col overflow-hidden rounded-b-3xl bg-white dark:bg-gray-900">
         {/* Middle Section: Rating, Title, Orange Underline, Features */}
-        <div className="pt-3 pb-10 px-6 flex-1 flex flex-col bg-white">
+        <div className="pt-3 pb-10 px-6 flex-1 flex flex-col bg-white dark:bg-gray-900">
           <div className="flex justify-end">
             <div className="inline-flex items-center gap-1.5 text-sm tabular-nums">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-              <span className="font-bold text-[#1f2937]">
+              <span className="font-bold text-[#1f2937] dark:text-white">
                 {pkg.rating.toFixed(1)}
               </span>
-              <span className="text-gray-500">({reviewCount} reviews)</span>
+              <span className="text-gray-500 dark:text-gray-400">
+                ({reviewCount} reviews)
+              </span>
             </div>
           </div>
 
-          <h3 className="mt-2 text-2xl font-bold text-[#0f172a] leading-snug">
+          <h3 className="mt-2 text-2xl font-bold text-[#0f172a] dark:text-white leading-snug">
             <a
               href={`/packages/${pkg.id}`}
               className="hover:text-[#e76f51] transition-colors"
@@ -122,28 +124,28 @@ export function PackageCard({ pkg }: PackageCardProps) {
 
           <div className="mt-auto pt-2 flex flex-wrap items-center gap-x-4 gap-y-2.5">
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] flex items-center justify-center shrink-0">
+              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] dark:bg-gray-800 flex items-center justify-center shrink-0">
                 <MapPin className="w-3.5 h-3.5 text-[#e76f51]" />
               </span>
-              <span className="text-xs sm:text-sm text-[#4b5563]">
+              <span className="text-xs sm:text-sm text-[#4b5563] dark:text-gray-300">
                 {pkg.location}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] flex items-center justify-center shrink-0">
+              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] dark:bg-gray-800 flex items-center justify-center shrink-0">
                 <Clock className="w-3.5 h-3.5 text-[#e76f51]" />
               </span>
-              <span className="text-xs sm:text-sm text-[#4b5563]">
+              <span className="text-xs sm:text-sm text-[#4b5563] dark:text-gray-300">
                 {pkg.duration}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] flex items-center justify-center shrink-0">
+              <span className="w-7 h-7 rounded-full bg-[#fcf4e8] dark:bg-gray-800 flex items-center justify-center shrink-0">
                 <Utensils className="w-3.5 h-3.5 text-[#e76f51]" />
               </span>
-              <span className="text-xs sm:text-sm text-[#4b5563]">
+              <span className="text-xs sm:text-sm text-[#4b5563] dark:text-gray-300">
                 Including meals and excursions
               </span>
             </div>
@@ -151,13 +153,13 @@ export function PackageCard({ pkg }: PackageCardProps) {
         </div>
 
         {/* Bottom Section: Curved Beige Footer */}
-        <div className="bg-[#fcf9f2] rounded-t-[2rem] rounded-b-3xl -mt-6 px-6 py-5 flex items-center justify-between gap-3 border-t border-[#f3eadb]">
+        <div className="bg-[#fcf9f2] dark:bg-gray-800/80 rounded-t-[2rem] rounded-b-3xl -mt-6 px-6 py-5 flex items-center justify-between gap-3 border-t border-[#f3eadb] dark:border-gray-800">
           <div className="flex items-baseline gap-0.5 tabular-nums">
-            <span className="text-2xl font-bold text-[#1f2937]">
+            <span className="text-2xl font-bold text-[#1f2937] dark:text-white">
               {priceAmount}
             </span>
             {priceUnit && (
-              <span className="text-xs font-medium text-gray-500">
+              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
                 /{priceUnit}
               </span>
             )}
